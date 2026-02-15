@@ -1,4 +1,26 @@
-// Global Variables
+// Password Portal (Scene 1)
+document.getElementById('submitPassword').addEventListener('click', () => {
+    const password = document.getElementById('passwordInput').value.trim(); // Trim whitespace
+    const errorMsg = document.getElementById('errorMessage');
+    console.log('Entered password:', password); // For debugging - check console
+    if (password === '9/3/2009') {
+        errorMsg.textContent = ''; // Clear any error
+        // Unlock animation: shake and glow
+        const button = document.getElementById('submitPassword');
+        button.style.animation = 'shake 0.5s';
+        setTimeout(() => {
+            button.style.boxShadow = '0 0 30px rgba(255, 255, 255, 0.8)';
+            setTimeout(() => {
+                console.log('Transitioning to Scene 2'); // For debugging
+                transitionToScene(2);
+            }, 1000);
+        }, 500);
+    } else {
+        errorMsg.textContent = 'Wrong key to my heart...';
+        errorMsg.classList.add('error');
+        console.log('Wrong password entered'); // For debugging
+    }
+});// Global Variables
 let currentScene = 1;
 const totalScenes = 5;
 let gameInterval;
