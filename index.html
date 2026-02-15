@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Romantic Birthday Surprise</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Continuous Rain Canvas (Background) -->
+    <canvas id="rainCanvas"></canvas>
+
+    <!-- Audio Element for Background Music -->
+    <audio id="backgroundMusic" src="baarishein.mp3" loop autoplay preload="auto" style="display: none;"></audio>
+
+    <!-- Scene 1: Password Portal -->
+    <div id="scene1" class="scene active">
+        <div class="content">
+            <h1>Welcome to My World</h1>
+            <p class="subtitle">This world belongs to only one person – My Jana</p>
+            <input type="text" id="passwordInput" placeholder="Your Birthday Date" maxlength="10">
+            <button id="submitPassword">Unlock</button>
+            <p id="errorMessage" class="error"></p>
+        </div>
+    </div>
+
+    <!-- Scene 2: Catch My Heart Game -->
+    <div id="scene2" class="scene">
+        <div class="content">
+            <h1>Catch My Heart</h1>
+            <p class="instructions">Catch every heart. Miss even ONE… and the game is over.</p>
+            <div id="gameArea">
+                <div id="score">Score: 0</div>
+                <div id="gameOverMessage" class="hidden">Oh no Jana… you missed my heart.</div>
+                <button id="restartGame" class="hidden">Restart Game</button>
+                <div id="successMessage" class="hidden">Oh my God Jana… you caught my heart ❤️</div>
+                <button id="enterGifts" class="hidden">Enter My Gifts</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scene 3: First Gift (Paragraph with Typing Animation) -->
+    <div id="scene3" class="scene">
+        <div class="content">
+            <p id="giftParagraph"></p>
+            <button id="nextGift">Open Your Next Gift</button>
+        </div>
+    </div>
+
+    <!-- Scene 4: Four Gift Boxes -->
+    <div id="scene4" class="scene">
+        <div class="content">
+            <h1>Open them one by one</h1>
+            <div class="giftBoxes">
+                <div class="giftBox" data-gift="1">Gift 1</div>
+                <div class="giftBox" data-gift="2">Gift 2</div>
+                <div class="giftBox" data-gift="3">Gift 3</div>
+                <div class="giftBox" data-gift="4">Gift 4</div>
+            </div>
+            <div id="giftMessage" class="hidden"></div>
+            <button id="biggestGift" class="hidden">Touch Here For The Biggest Gift</button>
+        </div>
+    </div>
+
+    <!-- Scene 5: Final Surprise -->
+    <div id="scene5" class="scene">
+        <div class="content">
+            <p id="finalPrompt">Touch here to receive your biggest gift</p>
+            <div id="finalReveal" class="hidden">
+                <div id="kissEmoji">💋</div>
+                <div id="confetti"></div>
+                <p>Forever Yours.<br>Happy Birthday, My Jana.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
